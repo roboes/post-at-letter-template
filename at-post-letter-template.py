@@ -1,5 +1,5 @@
 ## Post AG - Vorlage mit Absender Letter Template using ReportLab
-# Last update: 2023-07-19
+# Last update: 2023-08-02
 
 
 """
@@ -78,7 +78,7 @@ def create_table_frame(
             textColor=textColor,
             alignment=textHAlign,
         ),
-        encoding='utf8',
+        encoding='utf-8',
     )
 
     # In case of long text: shrink to fit inside table frame
@@ -191,8 +191,8 @@ def create_document(
         ## Title
 
         # Text
-        text = """Max Mustermann
-        Musterstr. 123 · 12345 Musterort"""
+        text = ("""Max Mustermann
+        Musterstr. 123 · 12345 Musterort""")
 
         # Create table frame
         create_table_frame(
@@ -212,7 +212,7 @@ def create_document(
         ## Adressfeld Absender/Einschreiben
 
         # Text
-        text = """Max Mustermann, Musterstr. 123, 12345 Musterort <i>(optional)</i>"""
+        text = ("""Max Mustermann, Musterstr. 123, 12345 Musterort <i>(optional)</i>""")
 
         # Create table frame
         create_table_frame(
@@ -281,7 +281,7 @@ def create_document(
         text = ("""{city}{date}""").format(
             city=city + ', ' if city != '' else '',
             # date=date.strftime('%d. %B %Y'),
-            date=format_date(date, format='dd. MMM yyyy', locale='de_DE'),
+            date=format_date(date, format='dd. MMMM yyyy', locale='de_DE'),
         )
 
         # Create table frame
@@ -302,7 +302,7 @@ def create_document(
         ## Inhalt
 
         # Text
-        text = """<b>Betreff: Briefvorlage Standard mit Absender</b>
+        text = ("""<b>Betreff: Briefvorlage Standard mit Absender</b>
 
 
         Sehr geehrte*r Anwender*in der Tages-Post,
@@ -321,7 +321,7 @@ def create_document(
 
         Mit freundlichen Grüßen
         Ihr Tages-Post Team
-        """
+        """)
 
         # Create table frame
         create_table_frame(
