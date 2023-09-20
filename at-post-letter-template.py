@@ -1,5 +1,5 @@
 ## Post AG - Vorlage mit Absender Letter Template using ReportLab
-# Last update: 2023-08-02
+# Last update: 2023-09-03
 
 
 """
@@ -154,13 +154,13 @@ def create_document(
     df,
     title,
     author='',
-    directory,
+    output_directory,
     file_name='Output.pdf',
     subject='',
 ):
     # Create document
     document = Canvas(
-        filename=os.path.join(directory, file_name),
+        filename=os.path.join(output_directory, file_name),
         pagesize=A4,
         bottomup=1,
         pdfVersion=(1, 4),
@@ -191,8 +191,8 @@ def create_document(
         ## Title
 
         # Text
-        text = ("""Max Mustermann
-        Musterstr. 123 · 12345 Musterort""")
+        text = """Max Mustermann
+        Musterstr. 123 · 12345 Musterort"""
 
         # Create table frame
         create_table_frame(
@@ -212,7 +212,7 @@ def create_document(
         ## Adressfeld Absender/Einschreiben
 
         # Text
-        text = ("""Max Mustermann, Musterstr. 123, 12345 Musterort <i>(optional)</i>""")
+        text = """Max Mustermann, Musterstr. 123, 12345 Musterort <i>(optional)</i>"""
 
         # Create table frame
         create_table_frame(
@@ -302,7 +302,7 @@ def create_document(
         ## Inhalt
 
         # Text
-        text = ("""<b>Betreff: Briefvorlage Standard mit Absender</b>
+        text = """<b>Betreff: Briefvorlage Standard mit Absender</b>
 
 
         Sehr geehrte*r Anwender*in der Tages-Post,
@@ -321,7 +321,7 @@ def create_document(
 
         Mit freundlichen Grüßen
         Ihr Tages-Post Team
-        """)
+        """
 
         # Create table frame
         create_table_frame(
@@ -397,6 +397,6 @@ create_document(
     df=df,
     title='Post AG - Vorlage mit Absender',
     author='Post AG',
-    directory=os.path.join(os.path.expanduser('~'), 'Downloads'),
+    output_directory=os.path.join(os.path.expanduser('~'), 'Downloads'),
     file_name='Post AG - Vorlage mit Absender.pdf',
 )
