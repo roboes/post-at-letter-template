@@ -1,9 +1,9 @@
 ## Post AG - Vorlage mit Absender Letter Template using ReportLab
-# Last update: 2023-09-03
+# Last update: 2023-11-25
 
 
 """
-About: Fill variables (of a given dataset input) into the Austrian Post AG - Vorlage mit Absender letter template using ReportLab library in Python.
+About: Fill variables (of a given dataset input) into the Austrian "Post AG - Vorlage mit Absender" letter template using ReportLab library in Python.
 
 Template: https://www.einfach-brief.at/fe/vorlagen
 """
@@ -65,7 +65,7 @@ def create_table_frame(
     ## Text
 
     # Add HTML paragraph breaks
-    text = re.sub(pattern=r'\n', repl='<br/>', string=text)
+    text = re.sub(pattern=r'\n', repl='<br/>', string=text, flags=0)
 
     # Create ReportLab Paragraph object and apply font styles to text
     text = Paragraph(
