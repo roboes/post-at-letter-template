@@ -13,7 +13,7 @@ This tool aims to fill variables (of a given dataset input) into the Austrian [P
 ## Output
 
 <p align="center">
-<img src="examples/output.png" alt="Output" width=510 high=720>
+<img src="./media/output.png" alt="Output" width=510 high=720>
 </p>
 
 # Usage
