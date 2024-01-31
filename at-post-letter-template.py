@@ -243,9 +243,11 @@ def create_document(
         {country}"""
         ).format(
             name=row['name'],
-            gender='Frau '
-            if row['gender'] == 'F'
-            else ('Herr ' if row['gender'] == 'M' else ''),
+            gender=(
+                'Frau '
+                if row['gender'] == 'F'
+                else ('Herr ' if row['gender'] == 'M' else '')
+            ),
             country=row['location_country'].upper(),
             postal_code=row['location_postal_code'],
             city=row['location_city'],

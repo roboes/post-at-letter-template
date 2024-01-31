@@ -27,19 +27,21 @@ python -m pip install babel pandas reportlab
 ## Functions
 
 ### create_document
+
 ```.py
 create_document(df, title, author, file_name)
 ```
 
 #### Description
+
 - Fill variables (of a given dataset input) into the Austrian Post AG - Vorlage mit Absender letter template and outputs it as a .pdf file.
 
 #### Parameters
-- `df`: *DataFrame*. List of Strava Club ids in which the tool should scrap data from (e.g. `club_ids = ['445017', '1045852']`).
-- `title`: *str*. PDF title metadata attribute (e.g. `title='Post AG - Vorlage mit Absender'`).
-- `author`: *str*. PDF author metadata attribute (e.g. `author='Post AG'`).
-- `file_name`: *str*. File name of the generated Austrian Post AG - Vorlage mit Absender letter template (e.g. `file_name='Post AG - Vorlage mit Absender.pdf'`).
 
+- `df`: _DataFrame_. List of Strava Club ids in which the tool should scrap data from (e.g. `club_ids = ['445017', '1045852']`).
+- `title`: _str_. PDF title metadata attribute (e.g. `title='Post AG - Vorlage mit Absender'`).
+- `author`: _str_. PDF author metadata attribute (e.g. `author='Post AG'`).
+- `file_name`: _str_. File name of the generated Austrian Post AG - Vorlage mit Absender letter template (e.g. `file_name='Post AG - Vorlage mit Absender.pdf'`).
 
 # Documentation
 
