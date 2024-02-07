@@ -33,8 +33,14 @@ from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph, KeepInFrame, Table, TableStyle
 
 
-# Set working directory
+# Settings
+
+## Set working directory
 # os.chdir(path=os.path.join(os.path.expanduser('~'), 'Downloads'))
+
+## Copy-on-Write (will be enabled by default in version 3.0)
+if pd.__version__ >= '1.5.0' and pd.__version__ < '3.0.0':
+    pd.options.mode.copy_on_write = True
 
 
 ###########
