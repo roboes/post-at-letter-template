@@ -1,5 +1,5 @@
 ## Post AG - Vorlage mit Absender Letter Template using ReportLab
-# Last update: 2023-11-25
+# Last update: 2025-01-03
 
 
 """
@@ -34,9 +34,6 @@ from reportlab.platypus import Paragraph, KeepInFrame, Table, TableStyle
 
 
 # Settings
-
-## Set working directory
-# os.chdir(path=os.path.join(os.path.expanduser('~'), 'Downloads'))
 
 ## Copy-on-Write (will be enabled by default in version 3.0)
 if pd.__version__ >= '1.5.0' and pd.__version__ < '3.0.0':
@@ -346,61 +343,3 @@ def create_document(
 
     # Save document
     document.save()
-
-
-#########################
-# AT Post Letter Template
-#########################
-
-# Create example DataFrame with names, gender and addresses
-df = pd.DataFrame(
-    data=[
-        [
-            'Eva Muster',
-            'F',
-            'Österreich',
-            'Musterbundesland',
-            '9875',
-            'Musterstadt',
-            'Musterstraße 1',
-        ],
-        [
-            'Max Mustermann',
-            'M',
-            'Österreich',
-            'Musterbundesland',
-            '9875',
-            'Musterstadt',
-            'Musterstraße 1',
-        ],
-        [
-            'Firma ABC',
-            '',
-            'Österreich',
-            'Musterbundesland',
-            '9875',
-            'Industriestadt',
-            'Industriestraße 1',
-        ],
-    ],
-    index=None,
-    columns=[
-        'name',
-        'gender',
-        'location_country',
-        'location_state',
-        'location_postal_code',
-        'location_city',
-        'location_street',
-    ],
-    dtype=None,
-)
-
-# Create .pdf document
-create_document(
-    df=df,
-    title='Post AG - Vorlage mit Absender',
-    author='Post AG',
-    output_directory=os.path.join(os.path.expanduser('~'), 'Downloads'),
-    file_name='Post AG - Vorlage mit Absender.pdf',
-)

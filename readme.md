@@ -26,7 +26,7 @@ python -m pip install babel pandas reportlab
 
 ## Functions
 
-### create_document
+### `create_document`
 
 ```.py
 create_document(df, title, author, file_name)
@@ -38,11 +38,69 @@ create_document(df, title, author, file_name)
 
 #### Parameters
 
-- `df`: _DataFrame_. List of Strava Club ids in which the tool should scrap data from (e.g. `club_ids = ['445017', '1045852']`).
+- `df`: _DataFrame_. The input DataFrame containing names, gender and addresses data.
 - `title`: _str_. PDF title metadata attribute (e.g. `title='Post AG - Vorlage mit Absender'`).
 - `author`: _str_. PDF author metadata attribute (e.g. `author='Post AG'`).
 - `file_name`: _str_. File name of the generated Austrian Post AG - Vorlage mit Absender letter template (e.g. `file_name='Post AG - Vorlage mit Absender.pdf'`).
 
+
+## Code Workflow Example
+
+```.py
+# Create example DataFrame with names, gender and addresses
+df = pd.DataFrame(
+    data=[
+        [
+            'Eva Muster',
+            'F',
+            'Österreich',
+            'Musterbundesland',
+            '9875',
+            'Musterstadt',
+            'Musterstraße 1',
+        ],
+        [
+            'Max Mustermann',
+            'M',
+            'Österreich',
+            'Musterbundesland',
+            '9875',
+            'Musterstadt',
+            'Musterstraße 1',
+        ],
+        [
+            'Firma ABC',
+            '',
+            'Österreich',
+            'Musterbundesland',
+            '9875',
+            'Industriestadt',
+            'Industriestraße 1',
+        ],
+    ],
+    index=None,
+    columns=[
+        'name',
+        'gender',
+        'location_country',
+        'location_state',
+        'location_postal_code',
+        'location_city',
+        'location_street',
+    ],
+    dtype=None,
+)
+
+# Create .pdf document
+create_document(
+    df=df,
+    title='Post AG - Vorlage mit Absender',
+    author='Post AG',
+    output_directory=os.path.join(os.path.expanduser('~'), 'Downloads'),
+    file_name='Post AG - Vorlage mit Absender.pdf',
+)
+```
+
 # Documentation
 
-[Post AG Österreich - Briefgestaltung](https://www.einfach-brief.at/fe/vorlagen)
+- [Post AG Österreich - Briefgestaltung](https://www.einfach-brief.at/fe/vorlagen)
