@@ -1,5 +1,3 @@
-<meta name='keywords' content='Austria, Österreich, Post AG, Brief, letter, template, reportlab, python'>
-
 # Austrian Post Letter Template
 
 ## Description
@@ -16,35 +14,34 @@ This tool aims to fill variables (of a given dataset input) into the Austrian [P
 <img src="./media/output.png" alt="Output" width=510 high=720>
 </p>
 
-# Usage
+## Usage
 
-## Python dependencies
+### Python dependencies
 
 ```.ps1
 python -m pip install babel pandas reportlab
 ```
 
-## Functions
+### Functions
 
-### `create_document`
+#### `create_document`
 
 ```.py
 create_document(df, title, author, file_name)
 ```
 
-#### Description
+##### Description
 
 - Fill variables (of a given dataset input) into the Austrian Post AG - Vorlage mit Absender letter template and outputs it as a .pdf file.
 
-#### Parameters
+##### Parameters
 
 - `df`: _DataFrame_. The input DataFrame containing names, gender and addresses data.
 - `title`: _str_. PDF title metadata attribute (e.g. `title='Post AG - Vorlage mit Absender'`).
 - `author`: _str_. PDF author metadata attribute (e.g. `author='Post AG'`).
 - `file_name`: _str_. File name of the generated Austrian Post AG - Vorlage mit Absender letter template (e.g. `file_name='Post AG - Vorlage mit Absender.pdf'`).
 
-
-## Code Workflow Example
+### Code Workflow Example
 
 ```.py
 # Create example DataFrame with names, gender and addresses
@@ -101,6 +98,6 @@ create_document(
 )
 ```
 
-# Documentation
+## Documentation
 
 - [Post AG Österreich - Briefgestaltung](https://www.einfach-brief.at/fe/vorlagen)
